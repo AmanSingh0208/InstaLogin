@@ -121,7 +121,8 @@
                 android:text="@string/forgot_msg"
                 android:textAlignment="center"
                 android:textSize="10sp"
-                tools:ignore="SmallSp" />
+                tools:ignore="SmallSp"
+                android:textColor="@color/cardview_dark_background"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -152,7 +153,8 @@
                 android:text="@string/new_to_insta_register_here"
                 android:textAlignment="center"
                 android:textSize="10sp"
-                tools:ignore="SmallSp" />
+                tools:ignore="SmallSp"
+                android:textColor="@color/cardview_dark_background"/>
 
 
         </LinearLayout>

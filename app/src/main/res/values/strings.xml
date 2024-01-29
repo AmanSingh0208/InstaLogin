@@ -18,4 +18,6 @@
     <string name="register_with_google">REGISTER WITH GOOGLE</string>
     <string name="river_image">River Image</string>
     <string name="message">Message</string>
+    <string name="already_have_an_account_singin">Already have an account? SIGN IN</string>
+    <string name="mobile_number">MOBILE NUMBER</string>
 </resources>
