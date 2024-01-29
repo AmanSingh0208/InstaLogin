@@ -21,7 +21,7 @@ class Homepage : AppCompatActivity() {
         val bundle: Bundle? = intent.extras
 
         bundle.let {
-            val msg = bundle!!.getString("name")
+            val msg = bundle!!.getString(MainActivity.KEY)
             viewText.text = "$msg"
         }
 

@@ -6,7 +6,7 @@
     <string name="username">USERNAME</string>
     <string name="password">PASSWORD</string>
     <string name="remember_me">REMEMBER ME</string>
-    <string name="btnLogin">LOGIN</string>
+    <string name="btnLogin">SIGN IN</string>
     <string name="forgot_msg">Forgotten your login details? Get help Singing In</string>
     <string name="or">OR</string>
     <string name="login_with_google">LOGIN USING GOOGLE</string>

@@ -2,19 +2,29 @@ package com.example.userlogin
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Email
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.identity.SignInPassword
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 const val RC_SIGN_IN = 123
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        const val KEY = "com.example.userlogin.MainActivity.KEY"
+    }
+
+    private lateinit var databaseReference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,17 +38,13 @@ class MainActivity : AppCompatActivity() {
         val gsc = GoogleSignIn.getClient(this, gso)
 
         loginButton.setOnClickListener {
-            val email: String = userLoginEmail.text.toString()
+            val mobileNum: String = userLoginEmail.text.toString()
             val pass: String = userLoginPassword.text.toString()
 
-            if (email == ValidateUser.email && pass == ValidateUser.password) {
-                val intent = Intent(applicationContext, Homepage::class.java)
-                intent.putExtra("name", ValidateUser.name)
-                intent.putExtra("img",ValidateUser.img)
-                startActivity(intent)
-            } else {
-                showToast("Incorrect Email/Password")
-            }
+            if (mobileNum.isNotEmpty() && pass.isNotEmpty())
+                readData(mobileNum,pass)
+            else
+                showToast("Please input Email/Password")
         }
 
         btnGoogle.setOnClickListener() {
@@ -63,6 +69,36 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, UserRegistration::class.java)
             startActivity(intent)
         }
+    }
+
+    //User Authentication
+    private fun readData(mobileNum: String, password: String) {
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+
+        databaseReference.child(mobileNum).get().addOnSuccessListener {
+
+            if (it.exists()) {
+
+                val number = it.child("mobileNum").value
+                val passwordUser = it.child("password").value
+                val userName = it.child("name").value.toString()
+
+                if (number == mobileNum && passwordUser == password) {
+                    val intentNew = Intent(this, Homepage::class.java)
+                    intentNew.putExtra(KEY,userName)
+                    startActivity(intentNew)
+                } else {
+                    showToast("Invalid Email/Password")
+                }
+            } else {
+                showToast("You're not registered, Please Register..")
+            }
+        }.addOnFailureListener {
+            showToast("Server not responding..")
+        }
+
+
+
     }
 
     @Deprecated("Deprecated in Java")
