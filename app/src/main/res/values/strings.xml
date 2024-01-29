@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">UserLogin</string>
+    <string name="logo">Logo</string>
+    <string name="login">LOGIN</string>
+    <string name="email">EMAIL</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="remember_me">REMEMBER ME</string>
+    <string name="btnLogin">LOGIN</string>
+    <string name="forgot_msg">Forgotten your login details? Get help Singing In</string>
+    <string name="or">OR</string>
+    <string name="login_with_google">LOGIN USING GOOGLE</string>
+    <string name="new_to_insta_register_here">New to Insta? REGISTER HERE</string>
+    <string name="user_registration">USER REGISTRATION</string>
+    <string name="full_name">FULL NAME</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="register_with_google">REGISTER WITH GOOGLE</string>
+    <string name="river_image">River Image</string>
+    <string name="message">Message</string>
+</resources>
