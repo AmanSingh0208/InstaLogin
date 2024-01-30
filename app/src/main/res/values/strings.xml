@@ -20,4 +20,11 @@
     <string name="message">Message</string>
     <string name="already_have_an_account_singin">Already have an account? SIGN IN</string>
     <string name="mobile_number">MOBILE NUMBER</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="aman_singh_chauhan">Aman Singh Chauhan</string>
+    <string name="analog_clock">Analog Clock</string>
+    <string name="chat">Chat</string>
+    <string name="insta">Insta</string>
 </resources>
