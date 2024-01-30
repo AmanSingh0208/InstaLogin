@@ -41,10 +41,8 @@ class MainActivity : AppCompatActivity() {
             val mobileNum: String = userLoginEmail.text.toString()
             val pass: String = userLoginPassword.text.toString()
 
-            if (mobileNum.isNotEmpty() && pass.isNotEmpty())
-                readData(mobileNum,pass)
-            else
-                showToast("Please input Email/Password")
+            if (mobileNum.isNotEmpty() && pass.isNotEmpty()) readData(mobileNum, pass)
+            else showToast("Please input Email/Password")
         }
 
         btnGoogle.setOnClickListener() {
@@ -85,7 +83,7 @@ class MainActivity : AppCompatActivity() {
 
                 if (number == mobileNum && passwordUser == password) {
                     val intentNew = Intent(this, Homepage::class.java)
-                    intentNew.putExtra(KEY,userName)
+                    intentNew.putExtra(KEY, userName)
                     startActivity(intentNew)
                 } else {
                     showToast("Invalid Email/Password")
@@ -96,7 +94,6 @@ class MainActivity : AppCompatActivity() {
         }.addOnFailureListener {
             showToast("Server not responding..")
         }
-
 
 
     }

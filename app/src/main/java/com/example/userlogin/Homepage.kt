@@ -26,7 +26,8 @@ class Homepage : AppCompatActivity() {
         }
 
         bundle.let {
-            viewImg.setImageResource(R.drawable.aman)}
+            viewImg.setImageResource(R.drawable.aman)
+        }
 
     }
 }
