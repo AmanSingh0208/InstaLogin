@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 
 class Homepage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,7 @@ class Homepage : AppCompatActivity() {
 
         btnHome.setOnClickListener {
             replaceFrameWithFragment(Home_Fragment())
+
         }
 
         btnSearch.setOnClickListener {

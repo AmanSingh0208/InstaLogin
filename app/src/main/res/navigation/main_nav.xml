@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_nav" />
+    android:id="@+id/main_nav"
+    app:startDestination="@id/clock_Fragment">
+
+    <activity
+        android:id="@+id/homepage"
+        android:name="com.example.userlogin.Homepage"
+        android:label="Homepage"
+        />
+
+    <fragment
+        android:id="@+id/clock_Fragment"
+        android:name="com.example.userlogin.Clock_Fragment"
+        android:label="Clock_Fragment" />
+    <fragment
+        android:id="@+id/profile_Fragment"
+        android:name="com.example.userlogin.Profile_Fragment"
+        android:label="Profile_Fragment" />
+    <fragment
+        android:id="@+id/home_Fragment"
+        android:name="com.example.userlogin.Home_Fragment"
+        android:label="Home_Fragment" />
+
+</navigation>

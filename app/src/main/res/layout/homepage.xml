@@ -39,6 +39,7 @@
             android:layout_weight="1"
             android:background="@null"
             android:contentDescription="@string/home"
+            android:backgroundTint="@color/backgroundTintIcon"
             android:elevation="5dp"
             android:src="@drawable/home" />
 
